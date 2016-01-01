@@ -7,7 +7,6 @@
 #'
 #' @author E. van Schaik
 #'
-#' @import raster
 #' @export
 
 
