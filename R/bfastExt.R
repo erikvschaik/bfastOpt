@@ -2,9 +2,26 @@
 #' @title bfastExt
 #'
 #' @description Multicore version of extended BFAST function. Should be replaced with B. DeVries's bfmThresh in due time.
-#' @param TEST
+#' @param x Rasterbrick with time-series data
+#' @param start (see bfastmonitor in bfast package)
+#' @param monend (see bfastmonitor in bfast package)
+#' @param cells Numeric vector of cells on which to run the function
+#' @param sensor (see bfastmonitor in bfast package)
+#' @param interactive (see bfastmonitor in bfast package)
+#' @param plot (see bfastmonitor in bfast package)
+#' @param order (see bfastmonitor in bfast package)
+#' @param h (see bfastmonitor in bfast package)
+#' @param level (see bfastmonitor in bfast package)
+#' @param mc.cores Number of cores to be used.
+#' @param magnThresh NDMI threshold
+#' @param magnPeriod Period (in years)
+#' @param verbose (see bfastmonitor in bfast package)
 #'
-#' @return ... Test
+#' @return List of information
+#'
+#' @import raster
+#' @import bfast
+#' @import parallel
 #'
 #' @author E. van Schaik
 #'
@@ -12,9 +29,8 @@
 
 
 bfastExt <- function(x, start, monend = NULL, cells = NULL,
-                     f = 1, min.thresh = NULL, sensor = NULL,
-                     interactive = FALSE, plot = FALSE, order = 1,
-                     h = 0.25, level = 0.05, mc.cores = 1,
+                     sensor = NULL,interactive = FALSE, plot = FALSE,
+                     order = 1, h = 0.25, level = 0.05, mc.cores = 1,
                      magnThresh = 0, magnPeriod = 1,
                      verbose = FALSE,
                      ...) {

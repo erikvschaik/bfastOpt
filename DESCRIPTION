@@ -1,11 +1,19 @@
 Package: bfastOpt
 Type: Package
-Title: What the Package Does (Title Case)
+Title: bfastOpt
 Version: 0.1
 Date: 2016-01-01
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: E. van Schaik
+Maintainer: <erik.vanschaik@wur.nl>
+Description: Will come...
+Depends:
+    R (>= 3.0.0),
+    raster,
+    parallel,
+    bfast,
+    sp,
+    zoo,
+    rgdal
+License: tbd
 LazyData: TRUE
 RoxygenNote: 5.0.1
