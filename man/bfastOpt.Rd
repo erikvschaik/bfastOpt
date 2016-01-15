@@ -4,10 +4,36 @@
 \alias{bfastOpt}
 \title{bfastOpt}
 \usage{
-bfastOpt(data = NULL, training.set = NULL, nIter = NULL)
+bfastOpt(x, cells, start, shp, nIter = 10, lmin = 0.001, lmax = 0.05,
+  hmin = 0.25, hmax = 1, mTmin = -1000, mtMax = 1000, mPmin = 0.5,
+  mPmax = 2, monend = NULL, adjust = 1, verbose = FALSE,
+  formula = response ~ harmon, mc.cores = 1, order = 1,
+  returnBFM = FALSE, ...)
 }
 \arguments{
-\item{A}{param}
+\item{x}{Numeric. Time series vector}
+
+\item{start}{Numeric. Start of monitoring period. See \code{\link{bfastmonitor}}}
+
+\item{monend}{Numeric. Optional: end of the monitoring period. See \code{\link{bfmSpatial}}}
+
+\item{adjust}{Numeric. Delete all observations within this many years preceding a breakpoint, if that breakpoint has a magnitude less than \code{magnThresh}}
+
+\item{verbose}{Logical. Display error messages (if any)?}
+
+\item{formula}{See \code{\link{bfastmonitor}}}
+
+\item{order}{See \code{\link{bfastmonitor}}}
+
+\item{returnBFM}{Logical. Return a regular \code{bfastmonitor} object?}
+
+\item{...}{Arguments to pass to \code{\link{bfastmonitor}}}
+
+\item{dates}{Time (date) index of \code{x}}
+
+\item{mT}{Numeric. Threshold for breakpoints. All breakpoints with magnitude < \code{magnThresh} are ignored, all data \code{adjust} years preceding this breakpoint are deleted, and monitoring continues with a revised history period.}
+
+\item{mP}{Numeric. Period of time (in years) from which to compute magnitude (as median of residuals)}
 }
 \value{
 ... Test
