@@ -13,4 +13,3 @@
 bfastOpt <- function(data=NULL, training.set=NULL, nIter=NULL) {
   print('Hello World')
 }
-

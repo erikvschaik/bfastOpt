@@ -11,6 +11,7 @@ Depends:
     raster,
     parallel,
     bfast,
+    bfmThresh,
     sp,
     zoo,
     rgdal
